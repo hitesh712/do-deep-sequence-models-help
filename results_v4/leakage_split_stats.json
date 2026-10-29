@@ -1,0 +1,29 @@
+[
+  {
+    "split": "naive (random rows of the raw data)",
+    "n_train": 9380,
+    "n_val": 1876,
+    "n_test": 1876,
+    "test_benign": 84,
+    "test_exact_duplicate_of_train": 0.6892324093816631,
+    "test_within_2_edits_of_train": 0.7356076759061834
+  },
+  {
+    "split": "exact-dedup (unique sequences, random)",
+    "n_train": 9380,
+    "n_val": 1876,
+    "n_test": 1876,
+    "test_benign": 84,
+    "test_exact_duplicate_of_train": 0.0,
+    "test_within_2_edits_of_train": 0.26492537313432835
+  },
+  {
+    "split": "group-aware (components kept together)",
+    "n_train": 9380,
+    "n_val": 1876,
+    "n_test": 1876,
+    "test_benign": 84,
+    "test_exact_duplicate_of_train": 0.0,
+    "test_within_2_edits_of_train": 0.1439232409381663
+  }
+]

@@ -1,0 +1,11 @@
+api_call,count
+CreateThread,243
+GetSystemMetrics,179
+NtAllocateVirtualMemory,131
+LdrLoadDll,131
+CoInitializeEx,123
+RegOpenKeyExW,106
+WSAStartup,105
+NtFreeVirtualMemory,85
+RegQueryInfoKeyW,78
+NtDuplicateObject,71

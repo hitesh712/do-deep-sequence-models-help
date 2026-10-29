@@ -1,0 +1,9 @@
+metric,value
+unique_exact_sequences,13206
+candidate_pairs_verified,91423
+near_duplicate_pairs_levenshtein_le_2_found,2481
+near_duplicate_pairs_with_different_labels,26
+near_duplicate_pairs_involving_conflicting_exact_groups,6
+unique_sequences_in_found_near_duplicate_pairs,2482
+candidate_method,"Three exact positional blocks (lengths 34, 33, 33) to identify likely pairs, followed by Levenshtein verification <=2. This is complete for <=2 substitutions in equal-length sequences when at least one block remains untouched, but not complete for insertion/deletion edits or skipped high-frequency blocks. Treat as a conservative screening audit, not proof of absence."
+high_frequency_anchor_buckets_skipped,31

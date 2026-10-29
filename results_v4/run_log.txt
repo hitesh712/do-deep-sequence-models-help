@@ -1,0 +1,478 @@
+2026-10-22 16:32:51 python 3.11.9 | tensorflow 2.20.0 | keras 3.13.0 | platform Windows-10-10.0.26300-SP0
+2026-10-22 16:32:51 GPU: [] | determinism: True
+2026-10-22 16:33:04 determinism test (same seed twice): max |diff| = 0.0 -> OK
+2026-10-22 16:33:12   one epoch of cnn: 8s -> 74.0 runs x ~12 epochs ~ 1.9 h
+2026-10-22 16:33:42   one epoch of bilstm: 29s -> 14 runs x ~12 epochs ~ 1.4 h
+2026-10-22 16:35:19   one epoch of transformer: 95s -> 14 runs x ~12 epochs ~ 4.4 h
+2026-10-22 16:35:51   one epoch of transformer_1layer: 31s -> 14 runs x ~12 epochs ~ 1.4 h
+2026-10-22 16:35:51 rough total for tier A (+C for the CNN): ~9.1 h; tier B ~ 0.7x tier A's three main deep models; tier D ~ 0.35x. Real times vary.
+2026-10-22 16:35:51 === TIER A: cnn ===
+2026-10-22 16:38:35   tune cnn lr=0.0003 seed=42: val macro-F1 (tuned thr) = 0.9235
+2026-10-22 16:41:21   tune cnn lr=0.0003 seed=7: val macro-F1 (tuned thr) = 0.9282
+2026-10-22 16:42:49   tune cnn lr=0.001 seed=42: val macro-F1 (tuned thr) = 0.9080
+2026-10-22 16:44:11   tune cnn lr=0.001 seed=7: val macro-F1 (tuned thr) = 0.9002
+2026-10-22 16:45:47   tune cnn lr=0.003 seed=42: val macro-F1 (tuned thr) = 0.8903
+2026-10-22 16:47:30   tune cnn lr=0.003 seed=7: val macro-F1 (tuned thr) = 0.9207
+2026-10-22 16:47:30   -> chosen lr for cnn: 0.0003
+2026-10-22 16:47:30   cnn seed=42: macro-F1=0.8942 (thr 0.50; @0.5 0.8942) benign recall=0.774
+2026-10-22 16:47:30   cnn seed=7: macro-F1=0.8968 (thr 0.50; @0.5 0.8968) benign recall=0.774
+2026-10-22 16:49:42   cnn seed=123: macro-F1=0.8774 (thr 0.72; @0.5 0.8637) benign recall=0.738
+2026-10-22 16:52:02   cnn seed=2024: macro-F1=0.8697 (thr 0.47; @0.5 0.8697) benign recall=0.679
+2026-10-22 16:54:47   cnn seed=999: macro-F1=0.8792 (thr 0.74; @0.5 0.8851) benign recall=0.774
+2026-10-22 16:57:43   cnn seed=17: macro-F1=0.8688 (thr 0.78; @0.5 0.8890) benign recall=0.786
+2026-10-22 17:00:34   cnn seed=37: macro-F1=0.8879 (thr 0.77; @0.5 0.8837) benign recall=0.833
+2026-10-22 17:03:15   cnn seed=73: macro-F1=0.8792 (thr 0.26; @0.5 0.8837) benign recall=0.690
+2026-10-22 17:06:11   cnn seed=101: macro-F1=0.8955 (thr 0.45; @0.5 0.8903) benign recall=0.762
+2026-10-22 17:08:59   cnn seed=2026: macro-F1=0.8916 (thr 0.59; @0.5 0.8852) benign recall=0.798
+2026-10-22 17:08:59   cnn: macro-F1 0.8840 +- 0.0105 (1988s)
+2026-10-22 17:08:59 === TIER A: bilstm ===
+2026-10-22 17:21:48   tune bilstm lr=0.0003 seed=42: val macro-F1 (tuned thr) = 0.8750
+2026-10-22 17:34:37   tune bilstm lr=0.0003 seed=7: val macro-F1 (tuned thr) = 0.8601
+2026-10-22 17:42:55   tune bilstm lr=0.001 seed=42: val macro-F1 (tuned thr) = 0.9014
+2026-10-22 17:50:18   tune bilstm lr=0.001 seed=7: val macro-F1 (tuned thr) = 0.8839
+2026-10-22 18:29:22   tune bilstm lr=0.003 seed=42: val macro-F1 (tuned thr) = 0.8750
+2026-10-22 18:36:28   tune bilstm lr=0.003 seed=7: val macro-F1 (tuned thr) = 0.9144
+2026-10-22 18:36:28   -> chosen lr for bilstm: 0.003
+2026-10-22 18:36:28   bilstm seed=42: macro-F1=0.8314 (thr 0.47; @0.5 0.8314) benign recall=0.583
+2026-10-22 18:36:28   bilstm seed=7: macro-F1=0.8544 (thr 0.67; @0.5 0.8629) benign recall=0.726
+2026-10-22 18:41:08   bilstm seed=123: macro-F1=0.8730 (thr 0.70; @0.5 0.8423) benign recall=0.762
+2026-10-22 18:50:26   bilstm seed=2024: macro-F1=0.8878 (thr 0.69; @0.5 0.8970) benign recall=0.786
+2026-10-22 18:59:34   bilstm seed=999: macro-F1=0.9055 (thr 0.39; @0.5 0.9003) benign recall=0.810
+2026-10-22 19:15:05   bilstm seed=17: macro-F1=0.8433 (thr 0.61; @0.5 0.8309) benign recall=0.667
+2026-10-22 19:21:29   bilstm seed=37: macro-F1=0.9017 (thr 0.74; @0.5 0.8917) benign recall=0.798
+2026-10-22 19:27:37   bilstm seed=73: macro-F1=0.8754 (thr 0.63; @0.5 0.8595) benign recall=0.762
+2026-10-22 19:33:49   bilstm seed=101: macro-F1=0.8916 (thr 0.34; @0.5 0.8928) benign recall=0.774
+2026-10-22 19:39:38   bilstm seed=2026: macro-F1=0.8876 (thr 0.25; @0.5 0.9003) benign recall=0.714
+2026-10-22 19:39:38   bilstm: macro-F1 0.8752 +- 0.0249 (9039s)
+2026-10-22 19:39:38 === TIER A: transformer ===
+2026-10-22 19:54:13   tune transformer lr=0.0003 seed=42: val macro-F1 (tuned thr) = 0.7634
+2026-10-22 20:12:03   tune transformer lr=0.0003 seed=7: val macro-F1 (tuned thr) = 0.8487
+2026-10-22 20:22:40   tune transformer lr=0.001 seed=42: val macro-F1 (tuned thr) = 0.7246
+2026-10-22 20:37:24   tune transformer lr=0.001 seed=7: val macro-F1 (tuned thr) = 0.7988
+2026-10-22 20:54:27   tune transformer lr=0.003 seed=42: val macro-F1 (tuned thr) = 0.4885
+2026-10-22 21:14:04   tune transformer lr=0.003 seed=7: val macro-F1 (tuned thr) = 0.4885
+2026-10-22 21:14:04   -> chosen lr for transformer: 0.0003
+2026-10-22 21:14:04   transformer seed=42: macro-F1=0.7480 (thr 0.89; @0.5 0.7216) benign recall=0.738
+2026-10-22 21:14:04   transformer seed=7: macro-F1=0.7871 (thr 0.50; @0.5 0.7871) benign recall=0.571
+2026-10-22 21:28:54   transformer seed=123: macro-F1=0.7778 (thr 0.41; @0.5 0.7997) benign recall=0.512
+2026-10-22 21:48:16   transformer seed=2024: macro-F1=0.7914 (thr 0.80; @0.5 0.8150) benign recall=0.690
+2026-10-22 22:04:57   transformer seed=999: macro-F1=0.7936 (thr 0.51; @0.5 0.7936) benign recall=0.583
+2026-10-22 22:18:45   transformer seed=17: macro-F1=0.7647 (thr 0.67; @0.5 0.7205) benign recall=0.643
+2026-10-22 22:36:47   transformer seed=37: macro-F1=0.7545 (thr 0.74; @0.5 0.7139) benign recall=0.452
+2026-10-22 22:54:49   transformer seed=73: macro-F1=0.7806 (thr 0.64; @0.5 0.7717) benign recall=0.631
+2026-10-22 23:12:50   transformer seed=101: macro-F1=0.7727 (thr 0.81; @0.5 0.7978) benign recall=0.643
+2026-10-22 23:29:16   transformer seed=2026: macro-F1=0.7989 (thr 0.59; @0.5 0.8066) benign recall=0.631
+2026-10-22 23:29:16   transformer: macro-F1 0.7769 +- 0.0170 (13779s)
+2026-10-22 23:29:16 === TIER A: transformer_1layer ===
+2026-10-22 23:35:14   tune transformer_1layer lr=0.0003 seed=42: val macro-F1 (tuned thr) = 0.7474
+2026-10-23 02:24:39   tune transformer_1layer lr=0.0003 seed=7: val macro-F1 (tuned thr) = 0.7340
+2026-10-23 02:28:52   tune transformer_1layer lr=0.001 seed=42: val macro-F1 (tuned thr) = 0.7585
+2026-10-23 02:35:15   tune transformer_1layer lr=0.001 seed=7: val macro-F1 (tuned thr) = 0.8172
+2026-10-23 02:39:00   tune transformer_1layer lr=0.003 seed=42: val macro-F1 (tuned thr) = 0.7640
+2026-10-23 02:42:24   tune transformer_1layer lr=0.003 seed=7: val macro-F1 (tuned thr) = 0.7586
+2026-10-23 02:42:24   -> chosen lr for transformer_1layer: 0.001
+2026-10-23 02:42:24   transformer_1layer seed=42: macro-F1=0.7467 (thr 0.45; @0.5 0.7679) benign recall=0.405
+2026-10-23 02:42:24   transformer_1layer seed=7: macro-F1=0.7847 (thr 0.49; @0.5 0.7895) benign recall=0.524
+2026-10-23 02:47:05   transformer_1layer seed=123: macro-F1=0.7771 (thr 0.83; @0.5 0.7228) benign recall=0.631
+2026-10-23 02:52:24   transformer_1layer seed=2024: macro-F1=0.7841 (thr 0.30; @0.5 0.7854) benign recall=0.512
+2026-10-23 02:58:04   transformer_1layer seed=999: macro-F1=0.7737 (thr 0.47; @0.5 0.7840) benign recall=0.512
+2026-10-23 03:03:25   transformer_1layer seed=17: macro-F1=0.7906 (thr 0.39; @0.5 0.7800) benign recall=0.512
+2026-10-23 03:07:46   transformer_1layer seed=37: macro-F1=0.7849 (thr 0.81; @0.5 0.6816) benign recall=0.607
+2026-10-23 03:12:48   transformer_1layer seed=73: macro-F1=0.7980 (thr 0.77; @0.5 0.7498) benign recall=0.595
+2026-10-23 03:18:31   transformer_1layer seed=101: macro-F1=0.7876 (thr 0.59; @0.5 0.7938) benign recall=0.583
+2026-10-23 03:23:34   transformer_1layer seed=2026: macro-F1=0.8149 (thr 0.59; @0.5 0.7900) benign recall=0.595
+2026-10-23 03:23:34   transformer_1layer: macro-F1 0.7842 +- 0.0175 (14058s)
+2026-10-23 03:23:34 === TIER A: random_forest ===
+2026-10-23 03:23:39   tune random_forest {}: val macro-F1 = 0.9171
+2026-10-23 03:23:45   random_forest seed=42: macro-F1=0.9036 benign recall=0.762
+2026-10-23 03:23:52   random_forest seed=7: macro-F1=0.8970 benign recall=0.750
+2026-10-23 03:23:58   random_forest seed=123: macro-F1=0.8917 benign recall=0.726
+2026-10-23 03:24:04   random_forest seed=2024: macro-F1=0.8955 benign recall=0.762
+2026-10-23 03:24:10   random_forest seed=999: macro-F1=0.9036 benign recall=0.762
+2026-10-23 03:24:16   random_forest seed=17: macro-F1=0.8930 benign recall=0.738
+2026-10-23 03:24:22   random_forest seed=37: macro-F1=0.8930 benign recall=0.738
+2026-10-23 03:24:28   random_forest seed=73: macro-F1=0.9134 benign recall=0.810
+2026-10-23 03:24:34   random_forest seed=101: macro-F1=0.8955 benign recall=0.762
+2026-10-23 03:24:41   random_forest seed=2026: macro-F1=0.8982 benign recall=0.762
+2026-10-23 03:24:46   random_forest: macro-F1 0.8985 +- 0.0067 (72s)
+2026-10-23 03:24:46 === TIER A: xgboost ===
+2026-10-23 03:24:52   tune xgboost {'learning_rate': 0.05}: val macro-F1 = 0.9426
+2026-10-23 03:24:59   tune xgboost {'learning_rate': 0.1}: val macro-F1 = 0.9398
+2026-10-23 03:25:04   tune xgboost {'learning_rate': 0.2}: val macro-F1 = 0.9327
+2026-10-23 03:25:11   xgboost seed=42: macro-F1=0.8997 benign recall=0.750
+2026-10-23 03:25:18   xgboost seed=7: macro-F1=0.9169 benign recall=0.786
+2026-10-23 03:25:26   xgboost seed=123: macro-F1=0.9036 benign recall=0.762
+2026-10-23 03:25:33   xgboost seed=2024: macro-F1=0.9012 benign recall=0.738
+2026-10-23 03:25:40   xgboost seed=999: macro-F1=0.9107 benign recall=0.810
+2026-10-23 03:25:47   xgboost seed=17: macro-F1=0.9141 benign recall=0.786
+2026-10-23 03:25:54   xgboost seed=37: macro-F1=0.9141 benign recall=0.786
+2026-10-23 03:26:01   xgboost seed=73: macro-F1=0.9052 benign recall=0.750
+2026-10-23 03:26:08   xgboost seed=101: macro-F1=0.9024 benign recall=0.750
+2026-10-23 03:26:15   xgboost seed=2026: macro-F1=0.9052 benign recall=0.750
+2026-10-23 03:26:22   xgboost: macro-F1 0.9073 +- 0.0061 (96s)
+2026-10-23 03:26:22 === TIER A: tfidf_logreg ===
+2026-10-23 03:26:25   tune tfidf_logreg {'C': 0.1}: val macro-F1 = 0.7268
+2026-10-23 03:26:29   tune tfidf_logreg {'C': 1.0}: val macro-F1 = 0.8172
+2026-10-23 03:26:32   tune tfidf_logreg {'C': 10.0}: val macro-F1 = 0.8796
+2026-10-23 03:26:36   tfidf_logreg seed=42: macro-F1=0.8611 benign recall=0.655
+2026-10-23 03:26:40   tfidf_logreg: macro-F1 0.8611 +- 0.0000 (18s)
+2026-10-23 03:26:40 === TIER A: nn1 ===
+2026-10-23 03:26:57   nn1: macro-F1 0.8107 +- 0.0000 (17s)
+2026-10-23 03:26:57 TIER A done.
+2026-10-23 03:29:40   CV r1 f1 cnn: macro-F1=0.8836 benign recall=0.734
+2026-10-23 03:43:04   CV r1 f1 bilstm: macro-F1=0.8980 benign recall=0.734
+2026-10-23 03:58:34   CV r1 f1 transformer: macro-F1=0.7445 benign recall=0.550
+2026-10-23 03:58:40   CV r1 f1 random_forest: macro-F1=0.9004 benign recall=0.798
+2026-10-23 03:58:47   CV r1 f1 xgboost: macro-F1=0.9226 benign recall=0.789
+2026-10-23 03:58:52   CV r1 f1 tfidf_logreg: macro-F1=0.8686 benign recall=0.679
+2026-10-23 03:59:13   CV r1 f1 nn1: macro-F1=0.7844 benign recall=0.532
+2026-10-23 04:01:27   CV r1 f2 cnn: macro-F1=0.8721 benign recall=0.715
+2026-10-23 04:11:13   CV r1 f2 bilstm: macro-F1=0.8723 benign recall=0.650
+2026-10-23 04:22:31   CV r1 f2 transformer: macro-F1=0.6974 benign recall=0.480
+2026-10-23 04:22:37   CV r1 f2 random_forest: macro-F1=0.8799 benign recall=0.707
+2026-10-23 04:22:45   CV r1 f2 xgboost: macro-F1=0.9065 benign recall=0.764
+2026-10-23 04:22:49   CV r1 f2 tfidf_logreg: macro-F1=0.8031 benign recall=0.577
+2026-10-23 04:23:12   CV r1 f2 nn1: macro-F1=0.8136 benign recall=0.577
+2026-10-23 04:25:39   CV r1 f3 cnn: macro-F1=0.8630 benign recall=0.627
+2026-10-23 04:36:54   CV r1 f3 bilstm: macro-F1=0.8711 benign recall=0.737
+2026-10-23 04:55:13   CV r1 f3 transformer: macro-F1=0.7964 benign recall=0.619
+2026-10-23 04:55:19   CV r1 f3 random_forest: macro-F1=0.8687 benign recall=0.746
+2026-10-23 04:55:26   CV r1 f3 xgboost: macro-F1=0.8761 benign recall=0.678
+2026-10-23 04:55:30   CV r1 f3 tfidf_logreg: macro-F1=0.8141 benign recall=0.763
+2026-10-23 04:55:54   CV r1 f3 nn1: macro-F1=0.7685 benign recall=0.508
+2026-10-23 04:58:50   CV r1 f4 cnn: macro-F1=0.9164 benign recall=0.763
+2026-10-23 05:12:44   CV r1 f4 bilstm: macro-F1=0.8928 benign recall=0.679
+2026-10-23 05:35:03   CV r1 f4 transformer: macro-F1=0.7529 benign recall=0.427
+2026-10-23 05:35:10   CV r1 f4 random_forest: macro-F1=0.9292 benign recall=0.832
+2026-10-23 05:35:18   CV r1 f4 xgboost: macro-F1=0.9425 benign recall=0.870
+2026-10-23 05:35:22   CV r1 f4 tfidf_logreg: macro-F1=0.8860 benign recall=0.802
+2026-10-23 05:35:47   CV r1 f4 nn1: macro-F1=0.8121 benign recall=0.565
+2026-10-23 05:38:39   CV r1 f5 cnn: macro-F1=0.8949 benign recall=0.779
+2026-10-23 05:57:32   CV r1 f5 bilstm: macro-F1=0.9250 benign recall=0.827
+2026-10-23 06:22:29   CV r1 f5 transformer: macro-F1=0.7872 benign recall=0.481
+2026-10-23 06:22:36   CV r1 f5 random_forest: macro-F1=0.8814 benign recall=0.817
+2026-10-23 06:22:44   CV r1 f5 xgboost: macro-F1=0.9090 benign recall=0.865
+2026-10-23 06:22:49   CV r1 f5 tfidf_logreg: macro-F1=0.8525 benign recall=0.654
+2026-10-23 06:23:13   CV r1 f5 nn1: macro-F1=0.7941 benign recall=0.548
+2026-10-23 06:26:14   CV r2 f1 cnn: macro-F1=0.8854 benign recall=0.736
+2026-10-23 06:38:57   CV r2 f1 bilstm: macro-F1=0.8884 benign recall=0.843
+2026-10-23 07:01:32   CV r2 f1 transformer: macro-F1=0.7863 benign recall=0.504
+2026-10-23 07:01:39   CV r2 f1 random_forest: macro-F1=0.9029 benign recall=0.760
+2026-10-23 07:01:47   CV r2 f1 xgboost: macro-F1=0.9289 benign recall=0.785
+2026-10-23 07:01:52   CV r2 f1 tfidf_logreg: macro-F1=0.8231 benign recall=0.587
+2026-10-23 07:02:17   CV r2 f1 nn1: macro-F1=0.7620 benign recall=0.471
+2026-10-23 07:05:20   CV r2 f2 cnn: macro-F1=0.8654 benign recall=0.661
+2026-10-23 07:22:09   CV r2 f2 bilstm: macro-F1=0.8606 benign recall=0.704
+2026-10-23 07:48:03   CV r2 f2 transformer: macro-F1=0.7916 benign recall=0.513
+2026-10-23 07:48:09   CV r2 f2 random_forest: macro-F1=0.8937 benign recall=0.765
+2026-10-23 07:48:16   CV r2 f2 xgboost: macro-F1=0.8899 benign recall=0.730
+2026-10-23 07:48:20   CV r2 f2 tfidf_logreg: macro-F1=0.8299 benign recall=0.600
+2026-10-23 07:48:43   CV r2 f2 nn1: macro-F1=0.7798 benign recall=0.574
+2026-10-23 07:51:27   CV r2 f3 cnn: macro-F1=0.8899 benign recall=0.827
+2026-10-23 08:02:04   CV r2 f3 bilstm: macro-F1=0.8565 benign recall=0.654
+2026-10-23 08:23:30   CV r2 f3 transformer: macro-F1=0.7760 benign recall=0.663
+2026-10-23 08:23:37   CV r2 f3 random_forest: macro-F1=0.8887 benign recall=0.740
+2026-10-23 08:23:44   CV r2 f3 xgboost: macro-F1=0.9157 benign recall=0.846
+2026-10-23 08:23:48   CV r2 f3 tfidf_logreg: macro-F1=0.8408 benign recall=0.769
+2026-10-23 08:24:10   CV r2 f3 nn1: macro-F1=0.7891 benign recall=0.548
+2026-10-23 08:26:55   CV r2 f4 cnn: macro-F1=0.8946 benign recall=0.788
+2026-10-23 08:42:18   CV r2 f4 bilstm: macro-F1=0.8984 benign recall=0.788
+2026-10-23 09:06:41   CV r2 f4 transformer: macro-F1=0.8181 benign recall=0.628
+2026-10-23 09:06:47   CV r2 f4 random_forest: macro-F1=0.8909 benign recall=0.823
+2026-10-23 09:06:54   CV r2 f4 xgboost: macro-F1=0.9178 benign recall=0.779
+2026-10-23 09:06:58   CV r2 f4 tfidf_logreg: macro-F1=0.8556 benign recall=0.681
+2026-10-23 09:07:21   CV r2 f4 nn1: macro-F1=0.8077 benign recall=0.558
+2026-10-23 09:10:11   CV r2 f5 cnn: macro-F1=0.8517 benign recall=0.591
+2026-10-23 09:28:15   CV r2 f5 bilstm: macro-F1=0.8795 benign recall=0.697
+2026-10-23 09:52:15   CV r2 f5 transformer: macro-F1=0.7913 benign recall=0.500
+2026-10-23 09:52:23   CV r2 f5 random_forest: macro-F1=0.8981 benign recall=0.788
+2026-10-23 09:52:32   CV r2 f5 xgboost: macro-F1=0.9024 benign recall=0.727
+2026-10-23 09:52:39   CV r2 f5 tfidf_logreg: macro-F1=0.8398 benign recall=0.591
+2026-10-23 09:53:03   CV r2 f5 nn1: macro-F1=0.7983 benign recall=0.530
+2026-10-23 09:53:03                macro_f1_mean  macro_f1_std  benign_recall_mean  benign_recall_std  malware_recall_mean  malware_recall_std  benign_average_precision_mean  benign_average_precision_std  roc_auc_mean  roc_auc_std
+model                                                                                                                                                                                                             
+bilstm                0.8843        0.0206              0.7314             0.0683               0.9932              0.0038                         0.8386                        0.0465        0.9835       0.0067
+cnn                   0.8817        0.0190              0.7221             0.0749               0.9935              0.0027                         0.8555                        0.0313        0.9840       0.0057
+nn1                   0.7910        0.0177              0.5412             0.0325               0.9876              0.0028                            NaN                           NaN           NaN          NaN
+random_forest         0.8934        0.0163              0.7777             0.0407               0.9919              0.0028                         0.8650                        0.0292        0.9867       0.0035
+tfidf_logreg          0.8414        0.0253              0.6703             0.0836               0.9882              0.0066                         0.7807                        0.0470        0.9803       0.0050
+transformer           0.7742        0.0343              0.5366             0.0765               0.9832              0.0103                         0.5954                        0.0863        0.9523       0.0182
+xgboost               0.9111        0.0191              0.7835             0.0630               0.9953              0.0023                         0.9060                        0.0223        0.9907       0.0027
+2026-10-23 09:53:03 TIER B done.
+2026-10-23 09:53:04   sweep s=0.0 seed=42: test macro-F1@0.5=0.8942 tuned=0.8942 benign recall@0.5=0.774
+2026-10-23 09:53:04   sweep s=0.0 seed=7: test macro-F1@0.5=0.8968 tuned=0.8968 benign recall@0.5=0.774
+2026-10-23 09:53:04   sweep s=0.0 seed=123: test macro-F1@0.5=0.8637 tuned=0.8774 benign recall@0.5=0.655
+2026-10-23 09:53:04   sweep s=0.0 seed=2024: test macro-F1@0.5=0.8697 tuned=0.8697 benign recall@0.5=0.679
+2026-10-23 09:53:04   sweep s=0.0 seed=999: test macro-F1@0.5=0.8851 tuned=0.8792 benign recall@0.5=0.738
+2026-10-23 09:53:04   sweep s=0.0 seed=17: test macro-F1@0.5=0.8890 tuned=0.8688 benign recall@0.5=0.750
+2026-10-23 09:53:04   sweep s=0.0 seed=37: test macro-F1@0.5=0.8837 tuned=0.8879 benign recall@0.5=0.726
+2026-10-23 09:53:04   sweep s=0.0 seed=73: test macro-F1@0.5=0.8837 tuned=0.8792 benign recall@0.5=0.726
+2026-10-23 09:53:04   sweep s=0.0 seed=101: test macro-F1@0.5=0.8903 tuned=0.8955 benign recall@0.5=0.762
+2026-10-23 09:53:04   sweep s=0.0 seed=2026: test macro-F1@0.5=0.8852 tuned=0.8916 benign recall@0.5=0.762
+2026-10-23 09:55:36   sweep s=0.25 seed=42: test macro-F1@0.5=0.8844 tuned=0.8878 benign recall@0.5=0.821
+2026-10-23 09:58:47   sweep s=0.25 seed=7: test macro-F1@0.5=0.8937 tuned=0.8982 benign recall@0.5=0.869
+2026-10-23 10:01:32   sweep s=0.25 seed=123: test macro-F1@0.5=0.8730 tuned=0.8768 benign recall@0.5=0.762
+2026-10-23 10:04:42   sweep s=0.25 seed=2024: test macro-F1@0.5=0.8975 tuned=0.8877 benign recall@0.5=0.833
+2026-10-23 10:07:16   sweep s=0.25 seed=999: test macro-F1@0.5=0.8739 tuned=0.8758 benign recall@0.5=0.750
+2026-10-23 10:10:21   sweep s=0.25 seed=17: test macro-F1@0.5=0.8841 tuned=0.8839 benign recall@0.5=0.774
+2026-10-23 10:13:28   sweep s=0.25 seed=37: test macro-F1@0.5=0.8903 tuned=0.8942 benign recall@0.5=0.786
+2026-10-23 10:16:26   sweep s=0.25 seed=73: test macro-F1@0.5=0.8854 tuned=0.8837 benign recall@0.5=0.786
+2026-10-23 10:19:42   sweep s=0.25 seed=101: test macro-F1@0.5=0.8937 tuned=0.8796 benign recall@0.5=0.869
+2026-10-23 10:22:59   sweep s=0.25 seed=2026: test macro-F1@0.5=0.9032 tuned=0.9011 benign recall@0.5=0.869
+2026-10-23 10:26:19   sweep s=0.5 seed=42: test macro-F1@0.5=0.8845 tuned=0.8734 benign recall@0.5=0.845
+2026-10-23 10:28:43   sweep s=0.5 seed=7: test macro-F1@0.5=0.8568 tuned=0.8781 benign recall@0.5=0.881
+2026-10-23 10:31:43   sweep s=0.5 seed=123: test macro-F1@0.5=0.8820 tuned=0.8928 benign recall@0.5=0.821
+2026-10-23 10:34:56   sweep s=0.5 seed=2024: test macro-F1@0.5=0.8938 tuned=0.8834 benign recall@0.5=0.845
+2026-10-23 10:37:50   sweep s=0.5 seed=999: test macro-F1@0.5=0.8730 tuned=0.8805 benign recall@0.5=0.821
+2026-10-23 10:41:19   sweep s=0.5 seed=17: test macro-F1@0.5=0.8765 tuned=0.8842 benign recall@0.5=0.833
+2026-10-23 10:44:18   sweep s=0.5 seed=37: test macro-F1@0.5=0.9056 tuned=0.9056 benign recall@0.5=0.869
+2026-10-23 10:47:35   sweep s=0.5 seed=73: test macro-F1@0.5=0.8891 tuned=0.9024 benign recall@0.5=0.821
+2026-10-23 10:50:46   sweep s=0.5 seed=101: test macro-F1@0.5=0.8759 tuned=0.8697 benign recall@0.5=0.869
+2026-10-23 10:53:49   sweep s=0.5 seed=2026: test macro-F1@0.5=0.8774 tuned=0.8995 benign recall@0.5=0.905
+2026-10-23 10:57:04   sweep s=0.75 seed=42: test macro-F1@0.5=0.8621 tuned=0.8797 benign recall@0.5=0.857
+2026-10-23 11:00:14   sweep s=0.75 seed=7: test macro-F1@0.5=0.8537 tuned=0.8867 benign recall@0.5=0.905
+2026-10-23 11:03:13   sweep s=0.75 seed=123: test macro-F1@0.5=0.8725 tuned=0.8879 benign recall@0.5=0.857
+2026-10-23 11:06:23   sweep s=0.75 seed=2024: test macro-F1@0.5=0.8790 tuned=0.8629 benign recall@0.5=0.857
+2026-10-23 11:09:19   sweep s=0.75 seed=999: test macro-F1@0.5=0.8675 tuned=0.8805 benign recall@0.5=0.869
+2026-10-23 11:12:30   sweep s=0.75 seed=17: test macro-F1@0.5=0.8607 tuned=0.8735 benign recall@0.5=0.881
+2026-10-23 11:15:44   sweep s=0.75 seed=37: test macro-F1@0.5=0.8903 tuned=0.8997 benign recall@0.5=0.881
+2026-10-23 11:19:08   sweep s=0.75 seed=73: test macro-F1@0.5=0.8925 tuned=0.8799 benign recall@0.5=0.881
+2026-10-23 11:22:16   sweep s=0.75 seed=101: test macro-F1@0.5=0.8720 tuned=0.8851 benign recall@0.5=0.893
+2026-10-23 11:25:25   sweep s=0.75 seed=2026: test macro-F1@0.5=0.8607 tuned=0.8951 benign recall@0.5=0.917
+2026-10-23 11:28:27   sweep s=1.0 seed=42: test macro-F1@0.5=0.8270 tuned=0.8483 benign recall@0.5=0.929
+2026-10-23 11:31:40   sweep s=1.0 seed=7: test macro-F1@0.5=0.8162 tuned=0.8725 benign recall@0.5=0.905
+2026-10-23 11:34:53   sweep s=1.0 seed=123: test macro-F1@0.5=0.8627 tuned=0.8891 benign recall@0.5=0.881
+2026-10-23 11:38:08   sweep s=1.0 seed=2024: test macro-F1@0.5=0.8804 tuned=0.8447 benign recall@0.5=0.893
+2026-10-23 11:41:11   sweep s=1.0 seed=999: test macro-F1@0.5=0.8620 tuned=0.8699 benign recall@0.5=0.893
+2026-10-23 11:44:39   sweep s=1.0 seed=17: test macro-F1@0.5=0.8563 tuned=0.8637 benign recall@0.5=0.929
+2026-10-23 11:48:07   sweep s=1.0 seed=37: test macro-F1@0.5=0.8870 tuned=0.8928 benign recall@0.5=0.917
+2026-10-23 11:51:41   sweep s=1.0 seed=73: test macro-F1@0.5=0.8824 tuned=0.8778 benign recall@0.5=0.869
+2026-10-23 11:55:08   sweep s=1.0 seed=101: test macro-F1@0.5=0.8549 tuned=0.8799 benign recall@0.5=0.881
+2026-10-23 11:58:40   sweep s=1.0 seed=2026: test macro-F1@0.5=0.8545 tuned=0.8966 benign recall@0.5=0.929
+2026-10-23 11:58:40   best strength on validation (incl. none) = 0.0; best positive strength used for the 2x2 = 0.25
+2026-10-23 11:58:40    weighting_strength  val_macro_f1_at0.5_mean  val_macro_f1_tuned_mean  test_macro_f1_at0.5_mean  test_macro_f1_tuned_mean  test_benign_recall_at0.5_mean  test_benign_recall_tuned_mean  test_malware_recall_at0.5_mean  test_malware_recall_tuned_mean
+0                0.00                   0.9080                   0.9141                    0.8841                    0.8840                         0.7345                         0.7607                          0.9929                          0.9909
+1                0.25                   0.9038                   0.9157                    0.8879                    0.8869                         0.8119                         0.7655                          0.9882                          0.9912
+2                0.50                   0.8974                   0.9092                    0.8815                    0.8870                         0.8512                         0.7762                          0.9836                          0.9905
+3                0.75                   0.8845                   0.9039                    0.8711                    0.8831                         0.8798                         0.7714                          0.9789                          0.9900
+4                1.00                   0.8682                   0.8954                    0.8583                    0.8735                         0.9024                         0.7595                          0.9733                          0.9886
+2026-10-23 11:58:40   weighting strength chosen on VALIDATION: 0.25
+2026-10-23 11:58:40              model  threshold  macro_f1_mean  macro_f1_sd  benign_recall_mean  benign_recall_sd  malware_recall_mean
+0       unweighted        0.5         0.8841       0.0103              0.7345            0.0401               0.9929
+1       unweighted  val-tuned         0.8840       0.0105              0.7607            0.0471               0.9909
+2  weighted s=0.25        0.5         0.8879       0.0097              0.8119            0.0465               0.9882
+3  weighted s=0.25  val-tuned         0.8869       0.0087              0.7655            0.0372               0.9912
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=42: macro-F1@0.5=0.8942 benign recall@0.5=0.774 adv recall@30=0.973
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=7: macro-F1@0.5=0.8968 benign recall@0.5=0.774 adv recall@30=0.979
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=123: macro-F1@0.5=0.8637 benign recall@0.5=0.655 adv recall@30=0.989
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=2024: macro-F1@0.5=0.8697 benign recall@0.5=0.679 adv recall@30=0.988
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=999: macro-F1@0.5=0.8851 benign recall@0.5=0.738 adv recall@30=0.988
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=17: macro-F1@0.5=0.8890 benign recall@0.5=0.750 adv recall@30=0.984
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=37: macro-F1@0.5=0.8837 benign recall@0.5=0.726 adv recall@30=0.980
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=73: macro-F1@0.5=0.8837 benign recall@0.5=0.726 adv recall@30=0.985
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=101: macro-F1@0.5=0.8903 benign recall@0.5=0.762 adv recall@30=0.979
+2026-10-23 11:58:40   hardening_0_weighting_0 seed=2026: macro-F1@0.5=0.8852 benign recall@0.5=0.762 adv recall@30=0.973
+2026-10-23 11:58:40   hardening_0_weighting_1 seed=42: macro-F1@0.5=0.8844 benign recall@0.5=0.821 adv recall@30=0.961
+2026-10-23 11:58:40   hardening_0_weighting_1 seed=7: macro-F1@0.5=0.8937 benign recall@0.5=0.869 adv recall@30=0.958
+2026-10-23 11:58:40   hardening_0_weighting_1 seed=123: macro-F1@0.5=0.8730 benign recall@0.5=0.762 adv recall@30=0.973
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=2024: macro-F1@0.5=0.8975 benign recall@0.5=0.833 adv recall@30=0.970
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=999: macro-F1@0.5=0.8739 benign recall@0.5=0.750 adv recall@30=0.972
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=17: macro-F1@0.5=0.8841 benign recall@0.5=0.774 adv recall@30=0.975
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=37: macro-F1@0.5=0.8903 benign recall@0.5=0.786 adv recall@30=0.970
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=73: macro-F1@0.5=0.8854 benign recall@0.5=0.786 adv recall@30=0.975
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=101: macro-F1@0.5=0.8937 benign recall@0.5=0.869 adv recall@30=0.961
+2026-10-23 11:58:41   hardening_0_weighting_1 seed=2026: macro-F1@0.5=0.9032 benign recall@0.5=0.869 adv recall@30=0.965
+2026-10-23 12:04:56   hardening_1_weighting_0 seed=42: macro-F1@0.5=0.9070 benign recall@0.5=0.798 adv recall@30=0.997
+2026-10-23 12:11:41   hardening_1_weighting_0 seed=7: macro-F1@0.5=0.8943 benign recall@0.5=0.750 adv recall@30=0.996
+2026-10-23 12:15:32   hardening_1_weighting_0 seed=123: macro-F1@0.5=0.8549 benign recall@0.5=0.631 adv recall@30=0.997
+2026-10-23 12:20:36   hardening_1_weighting_0 seed=2024: macro-F1@0.5=0.8777 benign recall@0.5=0.679 adv recall@30=0.997
+2026-10-23 12:25:19   hardening_1_weighting_0 seed=999: macro-F1@0.5=0.8890 benign recall@0.5=0.750 adv recall@30=0.996
+2026-10-23 12:28:53   hardening_1_weighting_0 seed=17: macro-F1@0.5=0.8575 benign recall@0.5=0.631 adv recall@30=0.998
+2026-10-23 12:33:22   hardening_1_weighting_0 seed=37: macro-F1@0.5=0.8825 benign recall@0.5=0.738 adv recall@30=0.996
+2026-10-23 12:37:32   hardening_1_weighting_0 seed=73: macro-F1@0.5=0.8851 benign recall@0.5=0.738 adv recall@30=0.996
+2026-10-23 12:42:40   hardening_1_weighting_0 seed=101: macro-F1@0.5=0.8837 benign recall@0.5=0.726 adv recall@30=0.995
+2026-10-23 12:47:33   hardening_1_weighting_0 seed=2026: macro-F1@0.5=0.8863 benign recall@0.5=0.726 adv recall@30=0.996
+2026-10-23 12:52:14   hardening_1_weighting_1 seed=42: macro-F1@0.5=0.8867 benign recall@0.5=0.821 adv recall@30=0.992
+2026-10-23 12:57:30   hardening_1_weighting_1 seed=7: macro-F1@0.5=0.9014 benign recall@0.5=0.821 adv recall@30=0.996
+2026-10-23 13:00:22   hardening_1_weighting_1 seed=123: macro-F1@0.5=0.8725 benign recall@0.5=0.738 adv recall@30=0.987
+2026-10-23 13:05:54   hardening_1_weighting_1 seed=2024: macro-F1@0.5=0.8864 benign recall@0.5=0.750 adv recall@30=0.997
+2026-10-23 13:09:36   hardening_1_weighting_1 seed=999: macro-F1@0.5=0.8699 benign recall@0.5=0.833 adv recall@30=0.987
+2026-10-23 13:14:18   hardening_1_weighting_1 seed=17: macro-F1@0.5=0.8854 benign recall@0.5=0.786 adv recall@30=0.996
+2026-10-23 13:18:39   hardening_1_weighting_1 seed=37: macro-F1@0.5=0.8822 benign recall@0.5=0.845 adv recall@30=0.993
+2026-10-23 13:23:10   hardening_1_weighting_1 seed=73: macro-F1@0.5=0.8735 benign recall@0.5=0.726 adv recall@30=0.996
+2026-10-23 13:28:21   hardening_1_weighting_1 seed=101: macro-F1@0.5=0.8927 benign recall@0.5=0.833 adv recall@30=0.993
+2026-10-23 13:32:58   hardening_1_weighting_1 seed=2026: macro-F1@0.5=0.8916 benign recall@0.5=0.774 adv recall@30=0.996
+2026-10-23 13:32:58 TIER C done.
+2026-10-23 13:33:00   split 'naive (random rows of the raw data)': test sequences identical to a training sequence = 68.9%, within 2 edits = 73.6%
+2026-10-23 13:35:31     cnn seed=42: macro-F1=0.9362 benign recall=0.857
+2026-10-23 13:38:21     cnn seed=7: macro-F1=0.9484 benign recall=0.869
+2026-10-23 13:40:53     cnn seed=123: macro-F1=0.9198 benign recall=0.821
+2026-10-23 13:51:01     bilstm seed=42: macro-F1=0.8808 benign recall=0.702
+2026-10-23 14:03:42     bilstm seed=7: macro-F1=0.8971 benign recall=0.726
+2026-10-23 14:18:18     bilstm seed=123: macro-F1=0.9398 benign recall=0.869
+2026-10-23 14:38:32     transformer seed=42: macro-F1=0.8581 benign recall=0.702
+2026-10-23 15:01:20     transformer seed=7: macro-F1=0.8928 benign recall=0.786
+2026-10-23 15:28:38     transformer seed=123: macro-F1=0.9086 benign recall=0.845
+2026-10-23 15:28:46     random_forest seed=42: macro-F1=0.9398 benign recall=0.869
+2026-10-23 15:28:54     random_forest seed=7: macro-F1=0.9282 benign recall=0.821
+2026-10-23 15:29:03     random_forest seed=123: macro-F1=0.9327 benign recall=0.845
+2026-10-23 15:29:10     xgboost seed=42: macro-F1=0.9569 benign recall=0.929
+2026-10-23 15:29:17     xgboost seed=7: macro-F1=0.9564 benign recall=0.917
+2026-10-23 15:29:24     xgboost seed=123: macro-F1=0.9507 benign recall=0.917
+2026-10-23 15:29:29     tfidf_logreg seed=42: macro-F1=0.8951 benign recall=0.833
+2026-10-23 15:29:48     nn1 seed=42: macro-F1=0.8942 benign recall=0.774
+2026-10-23 15:29:49   split 'exact-dedup (unique sequences, random)': test sequences identical to a training sequence = 0.0%, within 2 edits = 26.5%
+2026-10-23 15:33:00     cnn seed=42: macro-F1=0.8878 benign recall=0.762
+2026-10-23 15:36:15     cnn seed=7: macro-F1=0.8811 benign recall=0.726
+2026-10-23 15:39:09     cnn seed=123: macro-F1=0.8808 benign recall=0.702
+2026-10-23 16:00:25     bilstm seed=42: macro-F1=0.8822 benign recall=0.714
+2026-10-23 16:20:25     bilstm seed=7: macro-F1=0.8671 benign recall=0.679
+2026-10-23 16:40:37     bilstm seed=123: macro-F1=0.8851 benign recall=0.738
+2026-10-23 17:00:52     transformer seed=42: macro-F1=0.7032 benign recall=0.357
+2026-10-23 20:16:15     transformer seed=7: macro-F1=0.8089 benign recall=0.631
+2026-10-23 20:44:44     transformer seed=123: macro-F1=0.8107 benign recall=0.607
+2026-10-23 20:44:53     random_forest seed=42: macro-F1=0.8945 benign recall=0.702
+2026-10-23 20:45:02     random_forest seed=7: macro-F1=0.9028 benign recall=0.726
+2026-10-23 20:45:11     random_forest seed=123: macro-F1=0.8970 benign recall=0.750
+2026-10-23 20:45:20     xgboost seed=42: macro-F1=0.8984 benign recall=0.738
+2026-10-23 20:45:29     xgboost seed=7: macro-F1=0.8971 benign recall=0.726
+2026-10-23 20:45:38     xgboost seed=123: macro-F1=0.9048 benign recall=0.774
+2026-10-23 20:45:43     tfidf_logreg seed=42: macro-F1=0.8891 benign recall=0.821
+2026-10-23 20:46:04     nn1 seed=42: macro-F1=0.8171 benign recall=0.583
+2026-10-23 20:46:05   split 'group-aware (components kept together)': test sequences identical to a training sequence = 0.0%, within 2 edits = 14.4%
+2026-10-23 20:46:06     cnn seed=42: macro-F1=0.8942 benign recall=0.774
+2026-10-23 20:46:06     cnn seed=7: macro-F1=0.8968 benign recall=0.774
+2026-10-23 20:46:06     cnn seed=123: macro-F1=0.8774 benign recall=0.738
+2026-10-23 20:46:06     bilstm seed=42: macro-F1=0.8314 benign recall=0.583
+2026-10-23 20:46:06     bilstm seed=7: macro-F1=0.8544 benign recall=0.726
+2026-10-23 20:46:06     bilstm seed=123: macro-F1=0.8730 benign recall=0.762
+2026-10-23 20:46:06     transformer seed=42: macro-F1=0.7480 benign recall=0.738
+2026-10-23 20:46:06     transformer seed=7: macro-F1=0.7871 benign recall=0.571
+2026-10-23 20:46:06     transformer seed=123: macro-F1=0.7778 benign recall=0.512
+2026-10-23 20:46:15     random_forest seed=42: macro-F1=0.9036 benign recall=0.762
+2026-10-23 20:46:24     random_forest seed=7: macro-F1=0.8970 benign recall=0.750
+2026-10-23 20:46:33     random_forest seed=123: macro-F1=0.8917 benign recall=0.726
+2026-10-23 20:46:41     xgboost seed=42: macro-F1=0.8997 benign recall=0.750
+2026-10-23 20:46:50     xgboost seed=7: macro-F1=0.9169 benign recall=0.786
+2026-10-23 20:46:59     xgboost seed=123: macro-F1=0.9036 benign recall=0.762
+2026-10-23 20:47:04     tfidf_logreg seed=42: macro-F1=0.8611 benign recall=0.655
+2026-10-23 20:47:25     nn1 seed=42: macro-F1=0.8107 benign recall=0.607
+2026-10-23 20:47:25                                                       macro_f1_mean  macro_f1_std  benign_recall_mean  benign_recall_std  malware_recall_mean  malware_recall_std  benign_average_precision_mean  benign_average_precision_std
+split                                  model                                                                                                                                                                                  
+exact-dedup (unique sequences, random) bilstm                0.8781        0.0096              0.7103             0.0300               0.9933              0.0006                         0.8353                        0.0026
+                                       cnn                   0.8832        0.0040              0.7302             0.0300               0.9929              0.0014                         0.8605                        0.0093
+                                       nn1                   0.8171           NaN              0.5833                NaN               0.9900                 NaN                            NaN                           NaN
+                                       random_forest         0.8981        0.0043              0.7262             0.0238               0.9963              0.0016                         0.8811                        0.0025
+                                       tfidf_logreg          0.8891           NaN              0.8214                NaN               0.9877                 NaN                         0.8278                           NaN
+                                       transformer           0.7742        0.0615              0.5317             0.1517               0.9849              0.0015                         0.5959                        0.1278
+                                       xgboost               0.9001        0.0041              0.7460             0.0248               0.9953              0.0009                         0.9133                        0.0053
+group-aware (components kept together) bilstm                0.8529        0.0208              0.6905             0.0945               0.9894              0.0035                         0.7644                        0.0343
+                                       cnn                   0.8895        0.0105              0.7619             0.0206               0.9920              0.0009                         0.8319                        0.0248
+                                       nn1                   0.8107           NaN              0.6071                NaN               0.9860                 NaN                            NaN                           NaN
+                                       random_forest         0.8974        0.0060              0.7460             0.0182               0.9948              0.0003                         0.8577                        0.0025
+                                       tfidf_logreg          0.8611           NaN              0.6548                NaN               0.9939                 NaN                         0.8214                           NaN
+                                       transformer           0.7710        0.0204              0.6071             0.1172               0.9736              0.0202                         0.5938                        0.0458
+                                       xgboost               0.9067        0.0090              0.7659             0.0182               0.9953              0.0006                         0.9053                        0.0093
+naive (random rows of the raw data)    bilstm                0.9059        0.0305              0.7659             0.0901               0.9953              0.0009                         0.8848                        0.0384
+                                       cnn                   0.9348        0.0143              0.8492             0.0248               0.9957              0.0014                         0.9412                        0.0087
+                                       nn1                   0.8942           NaN              0.7738                NaN               0.9922                 NaN                            NaN                           NaN
+                                       random_forest         0.9335        0.0058              0.8452             0.0238               0.9957              0.0003                         0.9441                        0.0010
+                                       tfidf_logreg          0.8951           NaN              0.8333                NaN               0.9883                 NaN                         0.8727                           NaN
+                                       transformer           0.8865        0.0259              0.7778             0.0718               0.9903              0.0009                         0.8499                        0.0522
+                                       xgboost               0.9547        0.0034              0.9206             0.0069               0.9955              0.0006                         0.9671                        0.0007
+2026-10-23 20:47:25 TIER D done.
+2026-10-23 20:47:25   external sample: 100 sequences
+2026-10-23 20:47:52             model       threshold_mode  threshold  malware_recall  wilson95_low  wilson95_high  n_external_malware
+0          bilstm  val-tuned threshold       0.47            0.98         0.930          0.994                 100
+1          bilstm        threshold 0.5       0.50            0.98         0.930          0.994                 100
+2     transformer  val-tuned threshold       0.89            0.92         0.850          0.959                 100
+3     transformer        threshold 0.5       0.50            0.97         0.915          0.990                 100
+4             cnn  val-tuned threshold       0.50            0.95         0.888          0.978                 100
+5             cnn        threshold 0.5       0.50            0.95         0.888          0.978                 100
+6   random_forest  val-tuned threshold       0.76            0.98         0.930          0.994                 100
+7   random_forest        threshold 0.5       0.50            1.00         0.963          1.000                 100
+8         xgboost  val-tuned threshold       0.64            1.00         0.963          1.000                 100
+9         xgboost        threshold 0.5       0.50            1.00         0.963          1.000                 100
+10   tfidf_logreg  val-tuned threshold       0.62            0.98         0.930          0.994                 100
+11   tfidf_logreg        threshold 0.5       0.50            0.99         0.946          0.998                 100
+2026-10-23 20:47:52 TIER E done.
+2026-10-23 20:48:00 Created results_v4_package.zip  (19 MB) - send me this file.
+2026-10-23 20:48:02   split 'naive (random rows of the raw data)': test sequences identical to a training sequence = 68.9%, within 2 edits = 73.6%
+2026-10-23 20:48:02     cnn seed=42: macro-F1=0.9362 benign recall=0.857
+2026-10-23 20:48:02     cnn seed=7: macro-F1=0.9484 benign recall=0.869
+2026-10-23 20:48:02     cnn seed=123: macro-F1=0.9198 benign recall=0.821
+2026-10-23 20:48:02     bilstm seed=42: macro-F1=0.8808 benign recall=0.702
+2026-10-23 20:48:02     bilstm seed=7: macro-F1=0.8971 benign recall=0.726
+2026-10-23 20:48:02     bilstm seed=123: macro-F1=0.9398 benign recall=0.869
+2026-10-23 20:48:02     transformer seed=42: macro-F1=0.8581 benign recall=0.702
+2026-10-23 20:48:02     transformer seed=7: macro-F1=0.8928 benign recall=0.786
+2026-10-23 20:48:02     transformer seed=123: macro-F1=0.9086 benign recall=0.845
+2026-10-23 20:48:11     random_forest seed=42: macro-F1=0.9398 benign recall=0.869
+2026-10-23 20:48:20     random_forest seed=7: macro-F1=0.9282 benign recall=0.821
+2026-10-23 20:48:29     random_forest seed=123: macro-F1=0.9327 benign recall=0.845
+2026-10-23 20:48:37     xgboost seed=42: macro-F1=0.9569 benign recall=0.929
+2026-10-23 20:48:45     xgboost seed=7: macro-F1=0.9564 benign recall=0.917
+2026-10-23 20:48:54     xgboost seed=123: macro-F1=0.9507 benign recall=0.917
+2026-10-23 20:48:59     tfidf_logreg seed=42: macro-F1=0.8951 benign recall=0.833
+2026-10-23 20:49:20     nn1 seed=42: macro-F1=0.8942 benign recall=0.774
+2026-10-23 20:49:21   split 'exact-dedup (unique sequences, random)': test sequences identical to a training sequence = 0.0%, within 2 edits = 26.5%
+2026-10-23 20:49:21     cnn seed=42: macro-F1=0.8878 benign recall=0.762
+2026-10-23 20:49:21     cnn seed=7: macro-F1=0.8811 benign recall=0.726
+2026-10-23 20:49:21     cnn seed=123: macro-F1=0.8808 benign recall=0.702
+2026-10-23 20:49:21     bilstm seed=42: macro-F1=0.8822 benign recall=0.714
+2026-10-23 20:49:21     bilstm seed=7: macro-F1=0.8671 benign recall=0.679
+2026-10-23 20:49:21     bilstm seed=123: macro-F1=0.8851 benign recall=0.738
+2026-10-23 20:49:21     transformer seed=42: macro-F1=0.7032 benign recall=0.357
+2026-10-23 20:49:21     transformer seed=7: macro-F1=0.8089 benign recall=0.631
+2026-10-23 20:49:21     transformer seed=123: macro-F1=0.8107 benign recall=0.607
+2026-10-23 20:49:30     random_forest seed=42: macro-F1=0.8945 benign recall=0.702
+2026-10-23 20:49:38     random_forest seed=7: macro-F1=0.9028 benign recall=0.726
+2026-10-23 20:49:47     random_forest seed=123: macro-F1=0.8970 benign recall=0.750
+2026-10-23 20:49:55     xgboost seed=42: macro-F1=0.8984 benign recall=0.738
+2026-10-23 20:50:04     xgboost seed=7: macro-F1=0.8971 benign recall=0.726
+2026-10-23 20:50:12     xgboost seed=123: macro-F1=0.9048 benign recall=0.774
+2026-10-23 20:50:17     tfidf_logreg seed=42: macro-F1=0.8891 benign recall=0.821
+2026-10-23 20:50:38     nn1 seed=42: macro-F1=0.8171 benign recall=0.583
+2026-10-23 20:50:39   split 'group-aware (components kept together)': test sequences identical to a training sequence = 0.0%, within 2 edits = 14.4%
+2026-10-23 20:50:39     cnn seed=42: macro-F1=0.8942 benign recall=0.774
+2026-10-23 20:50:39     cnn seed=7: macro-F1=0.8968 benign recall=0.774
+2026-10-23 20:50:39     cnn seed=123: macro-F1=0.8774 benign recall=0.738
+2026-10-23 20:50:39     bilstm seed=42: macro-F1=0.8314 benign recall=0.583
+2026-10-23 20:50:40     bilstm seed=7: macro-F1=0.8544 benign recall=0.726
+2026-10-23 20:50:40     bilstm seed=123: macro-F1=0.8730 benign recall=0.762
+2026-10-23 20:50:40     transformer seed=42: macro-F1=0.7480 benign recall=0.738
+2026-10-23 20:50:40     transformer seed=7: macro-F1=0.7871 benign recall=0.571
+2026-10-23 20:50:40     transformer seed=123: macro-F1=0.7778 benign recall=0.512
+2026-10-23 20:50:48     random_forest seed=42: macro-F1=0.9036 benign recall=0.762
+2026-10-23 20:50:57     random_forest seed=7: macro-F1=0.8970 benign recall=0.750
+2026-10-23 20:51:06     random_forest seed=123: macro-F1=0.8917 benign recall=0.726
+2026-10-23 20:51:16     xgboost seed=42: macro-F1=0.8997 benign recall=0.750
+2026-10-23 20:51:26     xgboost seed=7: macro-F1=0.9169 benign recall=0.786
+2026-10-23 20:51:35     xgboost seed=123: macro-F1=0.9036 benign recall=0.762
+2026-10-23 20:51:41     tfidf_logreg seed=42: macro-F1=0.8611 benign recall=0.655
+2026-10-23 20:52:02     nn1 seed=42: macro-F1=0.8107 benign recall=0.607
+2026-10-23 20:52:02                                                       macro_f1_mean  macro_f1_std  benign_recall_mean  benign_recall_std  malware_recall_mean  malware_recall_std  benign_average_precision_mean  benign_average_precision_std
+split                                  model                                                                                                                                                                                  
+exact-dedup (unique sequences, random) bilstm                0.8781        0.0096              0.7103             0.0300               0.9933              0.0006                         0.8353                        0.0026
+                                       cnn                   0.8832        0.0040              0.7302             0.0300               0.9929              0.0014                         0.8605                        0.0093
+                                       nn1                   0.8171           NaN              0.5833                NaN               0.9900                 NaN                            NaN                           NaN
+                                       random_forest         0.8981        0.0043              0.7262             0.0238               0.9963              0.0016                         0.8811                        0.0025
+                                       tfidf_logreg          0.8891           NaN              0.8214                NaN               0.9877                 NaN                         0.8278                           NaN
+                                       transformer           0.7742        0.0615              0.5317             0.1517               0.9849              0.0015                         0.5959                        0.1278
+                                       xgboost               0.9001        0.0041              0.7460             0.0248               0.9953              0.0009                         0.9133                        0.0053
+group-aware (components kept together) bilstm                0.8529        0.0208              0.6905             0.0945               0.9894              0.0035                         0.7644                        0.0343
+                                       cnn                   0.8895        0.0105              0.7619             0.0206               0.9920              0.0009                         0.8319                        0.0248
+                                       nn1                   0.8107           NaN              0.6071                NaN               0.9860                 NaN                            NaN                           NaN
+                                       random_forest         0.8974        0.0060              0.7460             0.0182               0.9948              0.0003                         0.8577                        0.0025
+                                       tfidf_logreg          0.8611           NaN              0.6548                NaN               0.9939                 NaN                         0.8214                           NaN
+                                       transformer           0.7710        0.0204              0.6071             0.1172               0.9736              0.0202                         0.5938                        0.0458
+                                       xgboost               0.9067        0.0090              0.7659             0.0182               0.9953              0.0006                         0.9053                        0.0093
+naive (random rows of the raw data)    bilstm                0.9059        0.0305              0.7659             0.0901               0.9953              0.0009                         0.8848                        0.0384
+                                       cnn                   0.9348        0.0143              0.8492             0.0248               0.9957              0.0014                         0.9412                        0.0087
+                                       nn1                   0.8942           NaN              0.7738                NaN               0.9922                 NaN                            NaN                           NaN
+                                       random_forest         0.9335        0.0058              0.8452             0.0238               0.9957              0.0003                         0.9441                        0.0010
+                                       tfidf_logreg          0.8951           NaN              0.8333                NaN               0.9883                 NaN                         0.8727                           NaN
+                                       transformer           0.8865        0.0259              0.7778             0.0718               0.9903              0.0009                         0.8499                        0.0522
+                                       xgboost               0.9547        0.0034              0.9206             0.0069               0.9955              0.0006                         0.9671                        0.0007
+2026-10-23 20:52:02 TIER D done.
+2026-10-23 20:52:05 Created results_v4_package.zip  (19 MB) - send me this file.

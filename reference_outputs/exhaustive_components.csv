@@ -1,0 +1,4 @@
+max_edits,pairs,components,largest_component,largest_share,benign_in_largest,components_with_both_labels
+2,4970,10113,277,0.021093512031678342,0,4
+5,33993,6894,1311,0.09983247030155346,0,14
+10,436018,4087,3323,0.2530459945172099,0,28

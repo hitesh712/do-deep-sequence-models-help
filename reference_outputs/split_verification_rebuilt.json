@@ -1,0 +1,57 @@
+{
+ "retained_sequences": 13132,
+ "candidate_pairs_in_file": 2481,
+ "pairs_with_both_sequences_retained": 2430,
+ "components_rebuilt_from_pairs": 11475,
+ "components_stored": 11475,
+ "rebuilt_partition_identical_to_stored": true,
+ "max_splits_spanned_by_one_component": 1,
+ "components_excluded_total": 33,
+ "excluded_with_conflicting_exact_group": 15,
+ "excluded_sequences_total": 74,
+ "split_counts": {
+  "train": 9380,
+  "test": 1876,
+  "validation": 1876
+ },
+ "benign_per_split": {
+  "train": 417,
+  "test": 84,
+  "validation": 84
+ },
+ "summary_file": [
+  {
+   "split": "train",
+   "rows": 9380,
+   "fraction": 0.7142857142857143,
+   "malware_n": 8963,
+   "benign_n": 417,
+   "malware_prevalence": 0.955543710021322,
+   "benign_prevalence": 0.044456289978678,
+   "components": 8200,
+   "exact_sequences": 9380
+  },
+  {
+   "split": "validation",
+   "rows": 1876,
+   "fraction": 0.1428571428571428,
+   "malware_n": 1792,
+   "benign_n": 84,
+   "malware_prevalence": 0.9552238805970148,
+   "benign_prevalence": 0.044776119402985,
+   "components": 1639,
+   "exact_sequences": 1876
+  },
+  {
+   "split": "test",
+   "rows": 1876,
+   "fraction": 0.1428571428571428,
+   "malware_n": 1792,
+   "benign_n": 84,
+   "malware_prevalence": 0.9552238805970148,
+   "benign_prevalence": 0.044776119402985,
+   "components": 1636,
+   "exact_sequences": 1876
+  }
+ ]
+}

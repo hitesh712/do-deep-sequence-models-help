@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code or these splits, please cite them as below. The accompanying article is under review; its reference will be added here on publication."
+title: "Do Deep Sequence Models Help on Windows API-Call Traces? Code, splits and results"
+type: software
+license: MIT
+authors:
+  - given-names: Ogbonna
+    family-names: Chinweike
+    affiliation: "Marwadi University"
+  - given-names: Hitesh
+    family-names: Kag
+    affiliation: "Marwadi University"
+keywords:
+  - malware detection
+  - API call sequences
+  - data leakage
+  - near-duplicate detection
+  - deep learning

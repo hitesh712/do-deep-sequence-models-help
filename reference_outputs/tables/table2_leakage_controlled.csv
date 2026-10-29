@@ -1,0 +1,22 @@
+split,model,mean,<lambda_0>,count
+"exact-dedup (unique sequences, random)",bilstm,0.8781429939676761,0.009641561527806305,3
+"exact-dedup (unique sequences, random)",cnn,0.8831960273795277,0.003957291516459101,3
+"exact-dedup (unique sequences, random)",nn1,0.8171442443324242,,1
+"exact-dedup (unique sequences, random)",random_forest,0.8980762950282517,0.004257405593345387,3
+"exact-dedup (unique sequences, random)",tfidf_logreg,0.8891137824993012,,1
+"exact-dedup (unique sequences, random)",transformer,0.7742485397053578,0.061526588010009986,3
+"exact-dedup (unique sequences, random)",xgboost,0.9001156497522355,0.0040807156185359485,3
+group-aware (components kept together),bilstm,0.8529268944249725,0.02081890762899006,3
+group-aware (components kept together),cnn,0.8894589796372364,0.010503859462472825,3
+group-aware (components kept together),nn1,0.8106765033407572,,1
+group-aware (components kept together),random_forest,0.897409751699502,0.0059890226936468215,3
+group-aware (components kept together),tfidf_logreg,0.8611141958171387,,1
+group-aware (components kept together),transformer,0.7709787005136075,0.020397067355380504,3
+group-aware (components kept together),xgboost,0.9067299663175761,0.00902892234130476,3
+naive (random rows of the raw data),bilstm,0.9058944552409898,0.03046509690888364,3
+naive (random rows of the raw data),cnn,0.9348187376872564,0.014332177140118769,3
+naive (random rows of the raw data),nn1,0.8941756252489286,,1
+naive (random rows of the raw data),random_forest,0.9335402149813111,0.005844319737840081,3
+naive (random rows of the raw data),tfidf_logreg,0.8951076320939335,,1
+naive (random rows of the raw data),transformer,0.8865066180102316,0.02585595759127313,3
+naive (random rows of the raw data),xgboost,0.9546524365085229,0.0034249086236133527,3

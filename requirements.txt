@@ -1,0 +1,12 @@
+# Training environment of code/rerun_v4.py: Python 3.11.9, CPU only.
+# scikit-learn 1.7.2 and XGBoost 3.2.0 reproduce every stored classical-model result exactly (XGBoost with 8 threads,
+# fixed in the code as XGB_THREADS; XGBoost results depend on the thread count).
+tensorflow==2.20.0
+keras==3.13.0
+scikit-learn==1.7.2
+xgboost==3.2.0
+numpy
+pandas
+scipy
+rapidfuzz
+matplotlib

@@ -1,0 +1,15 @@
+{
+  "exhaustive_pairs_le2_among_retained": 4970,
+  "at_distance_1": 362,
+  "at_distance_2": 4608,
+  "candidate_pairs_in_file": 2481,
+  "candidate_pairs_with_both_retained": 2430,
+  "candidate_pairs_found_by_exhaustive": 2430,
+  "candidate_recall": 0.48893360160965793,
+  "candidate_pairs_not_confirmed_by_exhaustive": 0,
+  "cross_split_pairs": 1171,
+  "train_test_pairs": 509,
+  "test_sequences_with_train_neighbour_le2": 270,
+  "test_fraction_with_train_neighbour_le2": 0.1439232409381663,
+  "benign_test_with_train_neighbour_le2": 2
+}

@@ -1,0 +1,4 @@
+split,n_train,n_val,n_test,test_benign,test_exact_duplicate_of_train,test_within_2_edits_of_train
+naive (random rows of the raw data),9380,1876,1876,84,0.6892324093816631,0.7356076759061834
+"exact-dedup (unique sequences, random)",9380,1876,1876,84,0.0,0.26492537313432835
+group-aware (components kept together),9380,1876,1876,84,0.0,0.1439232409381663
