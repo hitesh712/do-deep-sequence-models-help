@@ -3,6 +3,7 @@ message: "If you use this code or these splits, please cite them as below. The a
 title: "Do Deep Sequence Models Help on Windows API-Call Traces? Code, splits and results"
 type: software
 license: MIT
+repository-code: "https://github.com/hitesh712/do-deep-sequence-models-help"
 authors:
   - given-names: Ogbonna
     family-names: Chinweike
