@@ -2,7 +2,7 @@
 
 Code, data splits, saved results, trained models and analysis scripts for
 
-> Ogbonna Chinweike and Hitesh Kag, "Do Deep Sequence Models Help on Windows API-Call Traces? A Duplicate-Controlled
+> Chinweike Ogbonna and Hitesh Kag, "Do Deep Sequence Models Help on Windows API-Call Traces? A Duplicate-Controlled
 > Comparison with Count-Based Baselines", submitted to *Computers & Security*.
 
 The study compares a 1D-CNN, a Bi-LSTM, two Transformers, Random Forest, XGBoost, TF-IDF + logistic regression and a
