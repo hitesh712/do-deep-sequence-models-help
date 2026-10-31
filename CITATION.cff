@@ -5,8 +5,8 @@ type: software
 license: MIT
 repository-code: "https://github.com/hitesh712/do-deep-sequence-models-help"
 authors:
-  - given-names: Ogbonna
-    family-names: Chinweike
+  - given-names: Chinweike
+    family-names: Ogbonna
     affiliation: "Marwadi University"
   - given-names: Hitesh
     family-names: Kag
